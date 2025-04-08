@@ -1,19 +1,23 @@
 #Config
 CC = c++
-TARGET = zombies
+TARGET = zombie
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-DFLAGS = -fsanitize=address
+# DFLAGS = -fsanitize=address
 
 # Directory
-SRC = Zombies.cpp randomChump.cpp main.cpp \
-		newZombie.cpp
+SRC = Zombie.cpp randomChump.cpp main.cpp newZombie.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(TARGET)
 
-$(TARGET): $(SRC) Makefile
-	$(CC) $(CFLAGS) $(DFLAGS) $(SRC) -o $(TARGET)
+$(TARGET): $(OBJ) Makefile
+	$(CC) $(CFLAGS) $(DFLAGS) $(OBJ) -o $(TARGET)
+
+%.o: %.cpp Makefile
+	$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
 
 clean: 
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(TARGET)
