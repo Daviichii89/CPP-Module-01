@@ -1,8 +1,6 @@
-
-
 #Config
 CC = c++
-TARGET = Zombies
+TARGET = zombies
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 DFLAGS = -fsanitize=address
 
