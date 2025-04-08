@@ -1,5 +1,5 @@
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <string>
 #include <iostream>
