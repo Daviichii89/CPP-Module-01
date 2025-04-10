@@ -2,7 +2,7 @@
 CC = c++
 TARGET = zombies
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-# DFLAGS = -fsanitize=address
+DFLAGS = -fsanitize=address
 
 # Directory
 SRC = Zombie.cpp zombieHorde.cpp main.cpp
