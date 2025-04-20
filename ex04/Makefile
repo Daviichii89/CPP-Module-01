@@ -1,6 +1,6 @@
 #Config
 CC = c++
-TARGET = replace_text
+NAME = replace_text
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 DFLAGS = -fsanitize=address
 
@@ -8,10 +8,10 @@ DFLAGS = -fsanitize=address
 SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 
-all: $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJ) Makefile
-	$(CC) $(CFLAGS) $(DFLAGS) $(OBJ) -o $(TARGET)
+$(NAME): $(OBJ) Makefile
+	$(CC) $(CFLAGS) $(DFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp Makefile
 	$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
@@ -20,7 +20,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
 re: fclean all
 
